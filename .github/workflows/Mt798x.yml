@@ -179,6 +179,8 @@ jobs:
       if: env.REPO_TOKEN
       run: |
         cd openwrt
+        sed -i '1i src-git danshui https://github.com/281677160/openwrt-package.git;Mt798x' feeds.conf.default
+        sed -i '2i src-git dstheme https://github.com/281677160/openwrt-package.git;Theme2' feeds.conf.default
         source ${BUILD_PATH}/common.sh && Diy_menu3
  
     - name: 加载自定义设置
